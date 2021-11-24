@@ -47,7 +47,9 @@ jobs:
 
       - name: Change PHP version if experimental
         if: ${{ matrix.experimental }}
-        run: composer config platform.php ${{ matrix.php-version }}
+        run: | 
+          composer config minimum-stability dev
+          composer config platform.php ${{ matrix.php-version }}
         
       - name: "Cache dependencies"
         uses: "actions/cache@v2"
