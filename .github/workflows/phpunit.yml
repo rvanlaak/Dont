@@ -49,7 +49,7 @@ jobs:
         if: ${{ matrix.experimental }}
         run: | 
           composer config minimum-stability dev
-          composer require php:>=${{ matrix.php-version }}.0-dev --ignore-platform-reqs --no-update
+          composer require php:^${{ matrix.php-version }}.0-dev --ignore-platform-reqs --no-update
         
       - name: "Cache dependencies"
         uses: "actions/cache@v2"
