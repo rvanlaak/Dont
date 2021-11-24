@@ -8,7 +8,7 @@ jobs:
   phpunit:
     name: "PHPUnit tests"
 
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
@@ -18,8 +18,6 @@ jobs:
           - "locked"
         php-version:
           - "8.0"
-        operating-system:
-          - "ubuntu-latest"
         experimental: 
           - false
           
