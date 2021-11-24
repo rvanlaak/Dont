@@ -18,10 +18,18 @@ jobs:
           - "locked"
         php-version:
           - "8.0"
-          - "8.1"
-          - "8.2"          
         operating-system:
           - "ubuntu-latest"
+        experimental: 
+          - false
+          
+        include:
+          - php-version: "8.1"
+            experimental: true
+          - php-version: "8.2"
+            experimental: true
+
+    continue-on-error: ${{ matrix.experimental }}
 
     steps:
       - name: "Checkout"
